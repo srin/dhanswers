@@ -6,4 +6,16 @@ class User < ActiveRecord::Base
 
   has_many :posts
   has_many :comments
+
+  def increase_karma(count=1)
+    update_attribute(:karma, karma + count)
+  end
+
+  def decrease_karma(count=1)
+  	update_attribute(:karma, karma - count)
+  end
+
+
 end
+
+

@@ -29,9 +29,14 @@
   <%= @post.comments.count %> Comments
 </h3>
 
-<div id="comments">
-  <%= render :partial => @post.comments %>
-</div>
+<% @post.comments.each do |comment| %>
+
+<p> <%= simple_format comment.body %> by <%= comment.user_id %> who has karma: <%= comment.user.karma %></p>
+<p> <%= link_to "upvote", like_post_comment_path(@post, comment), method: :put %></p>
+<p> <%= link_to "downvote", dislike_post_comment_path(@post, comment), method: :put %></p>
+<p>Score: <%= comment.get_upvotes.size - comment.get_downvotes.size %> </p>
+<%end%>
+
 <%= simple_form_for [@post, Comment.new]  do |f| %>
   <div class="field">
     <%= f.text_area :body, class: "form-control" %>
