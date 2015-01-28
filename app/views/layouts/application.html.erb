@@ -1,24 +1,64 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Dhquestions</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-						<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
-						<%= link_to 'Sign up', new_user_registration_path %>
-			    		<%= link_to 'Sign in', new_user_session_path %>
-			    		<%= link_to 'New post', new_post_path %>
+    <title><%= content_for?(:title) ? yield(:title) : "DHquestions" %></title>
 
-			<div class="container-fluid">
-				<% flash.each do |name, msg| %>
-		    	 <%= content_tag(:div, msg, class: "alert alert-info") %>
-			<% end %>
-			</div>
-<%= yield %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
 
-</body>
+  <header>
+  	<%= render 'layouts/header' %>
+
+  	<div class="row">
+        <div class="large-12 columns">
+          <div class="panel">
+            <h1>Current questions</h1>
+          </div>
+        </div>
+      </div>
+  </header>
+
+  <body>
+
+      <%= render 'layouts/profile' %>
+        
+        <!-- Main Feed -->
+        <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+        <div class="large-9 columns">
+     
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+     
+     
+      </div>
+     
+     
+
+     
+      <footer class="row">
+        <div class="large-12 columns">
+          <hr />
+          <div class="row">
+            <div class="large-5 columns">
+              <p>© Copyright no one at all. Go to town.</p>
+            </div>
+            <div class="large-7 columns">
+              <ul class="inline-list right">
+                <li><a href="#">Section 1</a></li>
+                <li><a href="#">Section 2</a></li>
+                <li><a href="#">Section 3</a></li>
+                <li><a href="#">Section 4</a></li>
+                <li><a href="#">Section 5</a></li>
+                <li><a href="#">Section 6</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+  </body>
 </html>

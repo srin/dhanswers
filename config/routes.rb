@@ -16,7 +16,5 @@ resources :posts do
   end
 end
 
-  
-
-  root 'pages#home'
+  root 'posts#index'
 end 

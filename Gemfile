@@ -18,4 +18,14 @@ end
 gem 'devise', '~> 3.4.1'
 gem 'simple_form', '~> 3.1.0'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'foundation-rails'
+
+group :development, :test do
+     gem 'sqlite3'
+end
+
+group :production do
+     gem 'pg'
+     gem 'rails_12factor'
+end
 
