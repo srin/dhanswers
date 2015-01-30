@@ -1,8 +1,11 @@
 
 <div id="feed" class="row">
+
+  
   <% @posts.each do |post| %>
+
         <div class="item">
-            <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
+            <div class="large-2 columns small-3"> <%= image_tag post.user.normalimage %> </div>
             
               <p><strong> <%=post.user.email%></strong> </p>
               <p><strong> <%=post.title%></strong> </p>

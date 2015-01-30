@@ -31,3 +31,5 @@ end
 gem 'omniauth-facebook'
 gem "figaro"
 gem 'paperclip', '~> 4.2.1'
+gem 'ransack', '~> 1.6.3'
+gem 'aws-sdk', '~> 1.61.0'

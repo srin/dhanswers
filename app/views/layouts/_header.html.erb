@@ -8,6 +8,17 @@
   </ul>
 
   <section class="top-bar-section">
+    <ul class="left">
+  
+    <div class="form">
+     <%= search_form_for @q do |f| %>
+      <div class="small-9 columns">
+  <%= f.search_field :description_or_title_cont, class: "right inline" %>
+    </div>
+   <%= f.submit class: "right inline" %>
+  <%end%>
+  </div>
+  </ul>
     
     <ul class="right">
         
@@ -26,3 +37,5 @@
     </ul>
   </section>
 </nav>
+
+
