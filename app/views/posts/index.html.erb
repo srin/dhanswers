@@ -1,14 +1,20 @@
-<div class="row">
+
+<div id="feed" class="row">
   <% @posts.each do |post| %>
+        <div class="item">
             <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
-            <div class="large-10 columns">
-              <p><strong> <%=post.user.email%></strong> 
-              <p><strong> <%=post.title%></strong> 
+            
+              <p><strong> <%=post.user.email%></strong> </p>
+              <p><strong> <%=post.title%></strong> </p>
+              <div class="description">
               <p> <%= post.description %></p>
+              </div>
               <ul class="inline-list">
-                <li><%= link_to "Answer question", post %></a></li>
+                <li><%= link_to "Answer question", post %><li>
                 <li><%= link_to "#{post.comments.count} answers".html_safe, post %> </li>
               </ul>    
-            </div>
           </div>
+   
           <%end%>
+
+       </div>

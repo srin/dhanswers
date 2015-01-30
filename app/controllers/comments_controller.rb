@@ -37,8 +37,12 @@ class CommentsController < ApplicationController
   	def upvote
   		@post = Post.find(params[:post_id])
   		@comment = @post.comments.find(params[:id])
-  		@comment.upvote_by current_user
+  		if current_user.voted_for? @comment
+  		
+  		else
+  		@comment.upvote_by current_user 
   		@comment.user.increase_karma
+  		end
   		flash[:success] = "You've upvoted"
   		redirect_to @post  			
   	end
@@ -46,10 +50,15 @@ class CommentsController < ApplicationController
   	def downvote
   		@post = Post.find(params[:post_id])
   		@comment = @post.comments.find(params[:id])
+  		if current_user.voted_for? @comment
+  		
+  		else
   		@comment.downvote_by current_user
   		@comment.user.decrease_karma
+  	end
   		flash[:success] = "You've downvoted"
-  		redirect_to @post  			
+  		redirect_to @post  		
+  		
   	end
 
 

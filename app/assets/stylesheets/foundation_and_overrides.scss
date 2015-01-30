@@ -1441,3 +1441,19 @@ $include-html-global-classes: $include-html-classes;
 // $include-accessibility-classes: true;
 
 @import 'foundation';
+
+.inline-list {
+	margin-left: 98px;
+}
+
+.item {
+	border-top: 1px solid grey;
+	margin-top: 20px;
+	padding: 15px;
+	.description {
+		
+		padding-left: 120px;
+	}
+}
+
+

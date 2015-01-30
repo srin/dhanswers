@@ -28,3 +28,6 @@ group :production do
      gem 'rails_12factor'
 end
 
+gem 'omniauth-facebook'
+gem "figaro"
+gem 'paperclip', '~> 4.2.1'

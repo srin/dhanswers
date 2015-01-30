@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150127203730) do
+ActiveRecord::Schema.define(version: 20150129233545) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -53,6 +53,13 @@ ActiveRecord::Schema.define(version: 20150127203730) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "karma",                  default: 0
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

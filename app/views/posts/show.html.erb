@@ -1,6 +1,6 @@
 
 <div class="row">
-            <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
+            <div class="large-2 columns small-3"> <%= image_tag @post.user.smallimage %> </div>
               <div class="large-8 columns">
                 <h3><strong> <%=@post.title%></strong> </h3>
               </div>
@@ -16,7 +16,7 @@
               <h4> <%= "#{@post.comments.count} answers".html_safe%></h4>
                 <% @post.comments.each do |comment| %>
               <div class="row">
-                <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]" /></div>
+                <div class="large-2 columns small-3"><%= image_tag comment.user.smallimage %></div>
                 <div class="large-10 columns">
                   <p>By <%= comment.user.email %> | User rating points: <%= comment.user.karma %></p>
                   <p><%= simple_format comment.body %> </p></div>
