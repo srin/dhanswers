@@ -12,23 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label :title, "1. Question title" %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.label :description, "2. Description (optional)" %><br>
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :location %><br>
+    <%= f.label :location, "3. Does your question relate to a specific country? If so, which one?" %><br>
     <%= f.text_field :location %>
   </div>
   <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.number_field :category_id %>
+    <%= f.label :category, "4. Please choose which category your question relates to?"%> <br>
+      <%= f.collection_select :category_id, Category.all, :id, :name %> <br>
   </div>
   <div class="field">
-    <%= f.label :disability %><br>
+    <%= f.label :disability, "5. Does your question relate to a specific disability? If so, which one?" %><br>
     <%= f.text_field :disability %>
   </div>
   <div class="actions">

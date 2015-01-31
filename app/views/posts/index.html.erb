@@ -1,21 +1,26 @@
 
 <div id="feed" class="row">
 
-  
+
   <% @posts.each do |post| %>
 
         <div class="item">
             <div class="large-2 columns small-3"> <%= image_tag post.user.normalimage %> </div>
             
-              <p><strong> <%=post.user.email%></strong> </p>
+              <p><strong> <%=post.user.name%></strong> </p>
               <p><strong> <%=post.title%></strong> </p>
               <div class="description">
               <p> <%= post.description %></p>
               </div>
               <ul class="inline-list">
                 <li><%= link_to "Answer question", post %><li>
-                <li><%= link_to "#{post.comments.count} answers".html_safe, post %> </li>
+                <li><%= link_to "View #{post.comments.count} answers".html_safe, post %> </li> 
+                <% if post.user == current_user %>
+                <li> <%= link_to "Edit Post", edit_post_path(post) %> </li>
+                <li> <%= link_to "Delete Post", post, method: :delete, data: { confirm: 'Are you sure?' } %> </li>
+               
               </ul>    
+               <%end%>
           </div>
    
           <%end%>
