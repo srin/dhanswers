@@ -27,4 +27,10 @@
    
           <%end%>
 
+          <% unless user_signed_in? %>
+
+<%= link_to "Sign in to share an answer!", user_omniauth_authorize_path(:facebook), class: "button expand"%>
+
+<%end%>
+
        </div>
