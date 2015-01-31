@@ -7,9 +7,11 @@
         <div class="item">
             <div class="large-2 columns small-3"> <%= image_tag post.user.normalimage %> </div>
             
-              <p><strong> <%=post.user.name%></strong> </p>
-              <p><strong> <%=post.title%></strong> </p>
+              <p><i>posted by</i><strong> <%=post.user.name%></strong> </p>
+              <p><strong> <%=post.title%> </strong> </p>
+
               <div class="description">
+              <p><strong> Category: <%=post.category.name %></strong></p>
               <p> <%= post.description %></p>
               </div>
               <ul class="inline-list">

@@ -6,15 +6,17 @@
               </div>
             <div class="large-10 columns">
               <p><i>posted by</i> <strong> <%=@post.user.name%></strong> </p>
+              <p><strong> Category: <%=@post.category.name %></strong></p>
+
               <p> <%= @post.description %></p>
               <ul class="inline-list">
-                      <% if @post.user == current_user %>
+                        <% if @post.user == current_user %>
                 <li> <%= link_to "Edit Post", edit_post_path(@post) %> </li>
                 <li> <%= link_to "Delete Post", @post, method: :delete, data: { confirm: 'Are you sure?' } %> </li>
+              <%end%> 
+              </ul>    
                
-              </ul>    
-               <%end%>
-              </ul>    
+                  
             </div>
           </div>
 

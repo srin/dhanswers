@@ -25,6 +25,7 @@
         
         <% if user_signed_in? %>
         <li><%= link_to "New question", new_post_path %></li>
+        <li><%= link_to "View all questions", root_path %></li>
         <li><%= link_to  "Hey #{current_user.name}!", root_path %> </li>
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         
