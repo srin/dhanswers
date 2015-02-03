@@ -1443,7 +1443,7 @@ $include-html-global-classes: $include-html-classes;
 @import 'foundation';
 
 .inline-list {
-	margin-left: 98px;
+	
 }
 
 .item {
@@ -1456,4 +1456,11 @@ $include-html-global-classes: $include-html-classes;
 	}
 }
 
+#banner {
+	background-color: #FF9645;
+	height: 100px;
+}
 
+#hometext {
+	margin-top: 100px;
+}

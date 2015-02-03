@@ -1,2 +1,32 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="top-bar">
+	<div id="banner" class="row">
+		<div class="large-12 columns">
+			<h1>DHAnswers</h1>	
+		</div>
+	</div>
+</div>
+
+<div id="hometext" class="row">
+	<div class="large-6 columns">
+		<h2>Top contributors</h2>
+		<div class="item">
+		<% @userlist.each do |user| %>
+
+			<p><%= user.name %>: <%= user.karma %></p>
+		</div>
+		<%end%>
+	</div>	
+
+	<div class="large-6 columns">
+		<h2>Latest questions</h2>
+			<% @posts.each do |post| %>
+			<div class="item">
+		  		
+		  		<%= post.title %>
+
+		  </div>
+		  <%end%>
+
+	</div>
+
+</div>

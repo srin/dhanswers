@@ -13,30 +13,31 @@
 
   <header>
   	<%= render 'layouts/header' %>
-
-  	<div class="row">
-        <div class="large-12 columns">
-          <div class="panel">
-            <h1>Current questions</h1>
-          </div>
-        </div>
-      </div>
+      
   </header>
 
   <body>
+
+  <% if user_signed_in? %>
+	 <div class="row">
+	 	<div class="large-3 columns">
+	      <%= render 'layouts/profile' %>
+
+    </div>
+  <%end%>
  
-      <%= render 'layouts/profile' %>
         
         <!-- Main Feed -->
         <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
-        <div class="large-9 columns">
+
+        
      
     <%= yield %>
     <%= javascript_include_tag "application" %>
     
      
-      </div>
-     
+      
+ 	</div>    
      
 
      

@@ -1,15 +1,15 @@
 
 <div class="row">
-            <div class="large-2 columns small-3"> <%= image_tag @post.user.normalimage %> </div>
-              <div class="large-8 columns">
+            <div class="large-3 columns small-3"> <%= image_tag @post.user.normalimage %> </div>
+              <div class="large-9 columns">
                 <h3><strong> <%=@post.title%></strong> </h3>
               </div>
-            <div class="large-10 columns">
+            <div class="large-9 columns">
               <p><i>posted by</i> <strong> <%=@post.user.name%></strong> </p>
               <p><strong> Category: <%=@post.category.name %></strong></p>
 
               <p> <%= @post.description %></p>
-              <ul class="inline-list">
+              <ul class="inline-list ">
                         <% if @post.user == current_user %>
                 <li> <%= link_to "Edit Post", edit_post_path(@post) %> </li>
                 <li> <%= link_to "Delete Post", @post, method: :delete, data: { confirm: 'Are you sure?' } %> </li>

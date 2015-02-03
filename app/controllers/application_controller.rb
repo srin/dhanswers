@@ -7,3 +7,8 @@ end
 def list_posts
 	@q = Post.ransack(params[:q])
 end
+
+def list_users
+	@user = User.all
+	@userlist = @user.order("karma DESC")
+end

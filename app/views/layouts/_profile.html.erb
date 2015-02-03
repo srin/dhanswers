@@ -1,10 +1,7 @@
     
-      <div class="row">
      <!-- Nav Sidebar -->
         <!-- This is source ordered to be pulled to the left on larger screens -->
                 <% if user_signed_in? %>
-
-        <div class="large-3 columns ">
           <div class="panel">
 
             <a href="#"> <%= image_tag current_user.largeimage %> </a>
@@ -15,8 +12,8 @@
               <section class="section">
                 <h5 class="title">User score rating: <%= current_user.karma %> </a></h5>
               </section>
+
             </div>
      <%end%>
           </div>
 
-        </div>
