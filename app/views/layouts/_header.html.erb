@@ -22,9 +22,9 @@
     
     <ul class="right">
         
-        
-        <% if user_signed_in? %>
         <li><%= link_to "New question", new_post_path %></li>
+
+        <% if user_signed_in? %>
         <li><%= link_to "View all questions", posts_path %></li>
         <li><%= link_to  "Hey #{current_user.name}!", root_path %> </li>
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
@@ -32,9 +32,19 @@
         <%else%>
         <li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
 
+
         <%end%>
     </ul>
   </section>
 </nav>
+
+<div class="top-bar">
+  <div id="banner" class="row">
+    <div class="large-12 columns center">
+      <strong><h1> <%= yield(:title) %></h1></strong>  
+      
+    </div>
+  </div>
+</div>
 
 

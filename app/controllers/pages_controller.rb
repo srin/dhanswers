@@ -4,7 +4,7 @@ class PagesController < ApplicationController
 
 
   def home
-  	    @posts =  @q.result.order("created_at DESC")
+  	    @posts =  @q.result.order("created_at DESC").limit(5)
   end
 
   def about

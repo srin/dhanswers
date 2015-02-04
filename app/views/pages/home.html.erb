@@ -1,10 +1,12 @@
-<div class="top-bar">
-	<div id="banner" class="row">
-		<div class="large-12 columns">
-			<h1>DHAnswers</h1>	
-		</div>
+<%= content_for(:title, "Welcome to DHAnswers") %>
+
+
+	<div class="large-9 large-centered columns" align="center">
+		<%= link_to "Ask a question", new_post_path, class: "button expand" %>
 	</div>
-</div>
+
+
+
 
 <div id="hometext" class="row">
 	<div class="large-6 columns">
@@ -12,21 +14,35 @@
 
 		<% @userlist.each do |user| %>
 
-		<div class="item">
+		<div id="home-item">
 			<p><%= user.name %></p>
 		</div>
 		<%end%>
+
+	  	<div class="home-button" align="center">
+		  	<%= link_to "View leaderboard", pages_leaderboard_path, class: "button round" %>
+		  		
+		</div>
+
 	</div>	
 
 	<div class="large-6 columns">
 		<h2>Latest questions</h2>
-			<% @posts.each do |post| %>
-			<div class="item">
-		  		
-		  		<%= post.title %>
 
-		  </div>
+			<% @posts.each do |post| %>
+			<div id="home-item">
+		  		
+		  		<p><%= post.title %> </p>
+
+		  	</div>
+
 		  <%end%>
+
+
+		  	<div class="home-button" align="center">
+		  		<%= link_to "View all questions", posts_path, class: "button round" %>
+		  		
+		  	</div>
 
 	</div>
 

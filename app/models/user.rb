@@ -23,11 +23,11 @@ class User < ActiveRecord::Base
 
   def largeimage
 	"http://graph.facebook.com/#{self.uid}/picture?type=large"
-end
+	end
 
- def normalimage
-"http://graph.facebook.com/#{self.uid}/picture?type=normal"
-end
+	def normalimage
+	"http://graph.facebook.com/#{self.uid}/picture?type=normal"
+	end
 	
   def smallimage
 	"http://graph.facebook.com/#{self.uid}/picture?type=small"
