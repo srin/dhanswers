@@ -12,3 +12,4 @@ def list_users
 	@user = User.all
 	@userlist = @user.order("karma DESC")
 end
+

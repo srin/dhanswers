@@ -1,40 +1,60 @@
 
 
-  <% if user_signed_in? %>
-   <div class="row">
-    <div class="large-3 columns">
-        <%= render 'layouts/profile' %>
+<!-- <div id="feed" class="row"> -->
 
+<div class="large-9 large-centered columns">
+<% @posts.each do |post| %>  
+  <div id="item" class="row">
+    <div class="large-2 columns small-3">
+      <%= image_tag post.user.normalimage %> 
     </div>
+
+    <div class="large-10 columns">
+      <p><i>posted by</i><strong> <%=post.user.name%></strong> </p>
+      <p><strong> Question: <%=post.title%> </strong> </p>
+      <p>Category: <%=post.category.name %></p>
+      
+      <ul class="inline-list">
+        <li><%= link_to "Answer question", post %><li>
+        <li><%= link_to "View #{post.comments.count} answers".html_safe, post %> </li> 
+        <li><%= link_to "Share", '#' %></li>
+          <% if post.user == current_user %>
+        <li> <%= link_to "Edit Post", edit_post_path(post) %> </li>
+        <li> <%= link_to "Delete Post", post, method: :delete, data: { confirm: 'Are you sure?' } %> </li>
+        
+      </ul>
+      <%end%>
+    </div>
+  </div>
   <%end%>
+</div>
 
-<div id="feed" class="row">
-
-
-  <% @posts.each do |post| %>
+<!--   <% @posts.each do |post| %>
 
         <div class="item">
-            <div class="large-2 columns small-3"> <%= image_tag post.user.normalimage %> </div>
-            
-              <p><i>posted by</i><strong> <%=post.user.name%></strong> </p>
-              <p><strong> <%=post.title%> </strong> </p>
+            <div class="large-2 columns small-3"> <%= image_tag post.user.normalimage %> 
 
-              <div class="description">
-              <p><strong> Category: <%=post.category.name %></strong></p>
-              <p> <%= post.description %></p>
-              </div>
-              <ul class="inline-list">
-                <li><%= link_to "Answer question", post %><li>
-                <li><%= link_to "View #{post.comments.count} answers".html_safe, post %> </li> 
-                <% if post.user == current_user %>
-                <li> <%= link_to "Edit Post", edit_post_path(post) %> </li>
-                <li> <%= link_to "Delete Post", post, method: :delete, data: { confirm: 'Are you sure?' } %> </li>
-               
-              </ul>    
+            </div>
+            
+              <div class="large-8 columns">
+                <p><i>posted by</i><strong> <%=post.user.name%></strong> </p>
+                <p><strong> <%=post.title%> </strong> </p>
+
+                
+                <p><strong> Category: <%=post.category.name %></strong></p>
+                <p> <%= post.description %></p>
+                
+                <ul class="inline-list">
+                  <li><%= link_to "Answer question", post %><li>
+                  <li><%= link_to "View #{post.comments.count} answers".html_safe, post %> </li> 
+                  <% if post.user == current_user %>
+                  <li> <%= link_to "Edit Post", edit_post_path(post) %> </li>
+                  <li> <%= link_to "Delete Post", post, method: :delete, data: { confirm: 'Are you sure?' } %> </li>
+                </ul>    
+
                <%end%>
-          </div>
-   
-          <%end%>
+             </div>
+          <%end%> -->
 
           <% unless user_signed_in? %>
 

@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :location, "3. Does your question relate to a specific country? If so, which one?" %><br>
-    <%= f.text_field :location %>
+    <%= f.country_select :location, ["United Kingdom", "United States"]  %>
   </div>
   <div class="field">
     <%= f.label :category, "4. Please choose which category your question relates to?"%> <br>
@@ -32,6 +32,7 @@
     <%= f.text_field :disability %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "button success"%>
   </div>
 <% end %>
+

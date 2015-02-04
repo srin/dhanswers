@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   
-  get 'pages/home'
+  match '/', to: 'pages#home', via: 'get'
 
   get 'pages/about'
 
@@ -17,5 +17,7 @@ resources :posts do
   end
 end
 
-  root 'posts#index'
+  root 'pages#home'
 end 
+
+
