@@ -9,9 +9,10 @@
 <div id="hometext" class="row">
 	<div class="large-6 columns">
 		<h2>Top contributors</h2>
-		<div class="item">
+
 		<% @userlist.each do |user| %>
 
+		<div class="item">
 			<p><%= user.name %></p>
 		</div>
 		<%end%>
