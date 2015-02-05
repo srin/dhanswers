@@ -1,2 +1,13 @@
-<h1>Pages#about</h1>
-<p>Find me in app/views/pages/about.html.erb</p>
+<%= content_for(:title, "About") %>
+
+<div class="large-9 large-centered columns">
+
+		<div class="text">
+		<p>DHAnswers is part of the <a href="http://www.disabilityhorizons.com"> Disability Horizons group </a>. A social enterprise based in London, UK that creates digital products and services that help disabled people.</p>
+
+		<p>DHAnswers is a service to find answers to disability related questions from the community. Answers are vetted and verified by the community through up and downvotes. If you'd like to ask a question, please  <%= link_to "click here", new_post_path %> to sign up and post a question.</p>
+
+		<p> <a href="http://www.disabilityhorizons.com">Disability Horizons</a> is the UK’s fastest growing disability lifestyle publication. Started by two disabled entrepreneurs, Martyn Sibley and Srin Madipalli in the summer of 2011, Disability Horizons now has a rapidly growing monthly web audience of 25,000 people. The magazine is unique in the disability sector for having content sourced entirely from its reader community.</p>
+		</div>
+
+</div>

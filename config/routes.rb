@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   get 'pages/leaderboard'
 
+  get 'pages/faq'
+
+  get 'pages/contact'
+
 resources :posts do
   resources :comments do
     member do

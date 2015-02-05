@@ -32,7 +32,7 @@
 			<% @posts.each do |post| %>
 			<div id="home-item">
 		  		
-		  		<p><%= post.title %> </p>
+		  		<p><%= post.title %> | <%= link_to "Answer question", post %> | <%= link_to "View #{post.comments.count} answers".html_safe, post %>  </p>
 
 		  	</div>
 

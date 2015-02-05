@@ -13,4 +13,11 @@ class PagesController < ApplicationController
   def leaderboard
   	
   end
+
+  def contact
+  end
+
+  def faq
+  	
+  end
 end
